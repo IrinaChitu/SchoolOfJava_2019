@@ -1,0 +1,12 @@
+GIT / GIT SCM
+
+folder School of Java
+git init
+git status
+git add .
+git remote add origin link.git
+
+
+Maven (management of libraries packages | management of dependencies and much more):
+GroupId
+
