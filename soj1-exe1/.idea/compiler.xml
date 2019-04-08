@@ -9,5 +9,6 @@
         <module name="soj1-exe1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
