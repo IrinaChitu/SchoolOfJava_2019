@@ -1,6 +1,7 @@
 package config;
 
 import beans.TransactionRepository;
+import beans.TransactionService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -24,5 +25,13 @@ public class ProjectConfig {
         TransactionRepository transactionRepository = new TransactionRepository();
         transactionRepository.setNume("Transaction 2");
         return transactionRepository;
+    }
+
+    @Bean
+    public TransactionService transactionService() {
+        TransactionService transactionService = new TransactionService();
+        transactionService.setTransactionRepository(new TransactionRepository());   // se instantiaza mereu un ob nou
+        transactionService.setTransactionRepository(transactionRepository());
+        return transactionService;
     }
 }

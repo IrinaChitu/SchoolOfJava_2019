@@ -1,6 +1,7 @@
 package main;
 
 import beans.TransactionRepository;
+import beans.TransactionService;
 import config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -20,7 +21,7 @@ public class Main {
             System.out.println(transactionRepository2);
 
 
-            
+
 
             TransactionRepository transactionRepositoryPrototype = context.getBean("transactionRepository2", TransactionRepository.class); //by name
             TransactionRepository transactionRepositoryPrototype2 = context.getBean("transactionRepository2", TransactionRepository.class); //by name
@@ -29,6 +30,10 @@ public class Main {
 
             System.out.println(transactionRepositoryPrototype);
             System.out.println(transactionRepositoryPrototype2);
+
+
+            TransactionService transactionService = context.getBean(TransactionService.class);
+            System.out.println(transactionService.getTransactionRepository()); //trebuia sa imi dea transaction 1
         }
 
         // context.close(); - cu try nu mai e nevoie sa inchidem manual contextul
